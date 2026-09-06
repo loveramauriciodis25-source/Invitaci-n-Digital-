@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis XV Años</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-rose: #B56B78;
+            --dark-rose: #5c1e2b; /* Oscurecido para parecerse al texto de tu imagen */
+            --gold-accent: #C49A45;
+            --text-color: #1a1a1a;
+            --font-script: 'Great Vibes', cursive;
+            --font-serif: 'Cormorant Garamond', serif;
+            --font-sans: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: #2b2b2b;
+            font-family: var(--font-sans);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Mobile Wrapper */
+        .mobile-container {
+            max-width: 450px;
+            margin: 0 auto;
+            background-color: #FFF;
+            position: relative;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+            overflow-x: hidden;
+        }
+
+        /* =========================================================
+           SECCIONES DE PÁGINA (AQUÍ CAMBIAS LOS FONDOS)
+           ========================================================= */
+        .page-section {
+            position: relative;
+            min-height: 100vh; /* Ocupa la pantalla completa del celular */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 15px;
+        }
+
+        /* FONDO PÁGINA 1: Portada */
+        #pagina-1 {
+            /* Pon aquí el enlace de tu imagen de fondo para la portada */
+            background-image: url(1.jpg); 
+        }
+
+        /* FONDO PÁGINA 2: Carrusel y Cuenta Regresiva */
+        #pagina-2 {
+            background-image: url(2.jpg); 
+            background-color: #FFF9F8; /* Color de respaldo si no hay imagen */
+        }
+
+        /* FONDO PÁGINA 3: Ubicaciones y Ceremonia */
+        #pagina-3 {
+            background-image: url(f1.jpg); 
+        }
+
+        /* FONDO PÁGINA 4: Dress Code, Regalos y RSVP */
+        #pagina-4 {
+            background-image: url(f2.jpg); 
+        }
+
+        /* Para asegurar que el texto se lea sobre las imágenes, 
+           agregamos un fondo semitransparente a los elementos (opcional) */
+        .content-overlay {
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 20px;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.05);
+            backdrop-filter: blur(4px);
+        }
+
+        /* Textos de la Portada */
+        .subtitle-top {
+            font-family: var(--font-serif);
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            color: var(--dark-rose);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .main-name {
+            font-family: var(--font-script);
+            font-size: 5rem;
+            color: var(--text-color);
+            line-height: 1;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        .event-date {
+            font-family: var(--font-serif);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            color: var(--dark-rose);
+            font-weight: 600;
+            margin-bottom: 50px;
+        }
+
+        /* Botón Desliza (Animado) */
+        .scroll-down {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--dark-rose);
+            font-family: var(--font-serif);
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            margin-top: 20px;
+            animation: bounce 2s infinite;
+        }
+        
+        .scroll-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(200, 180, 180, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8px;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        /* Cards e Información */
+        .phrase {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--text-color);
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 20px;
+            padding: 25px 20px;
+            margin-bottom: 20px;
+            width: 100%;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            text-align: center;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background: #F8EFEA;
+            color: var(--dark-rose);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        .card-title {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            color: var(--dark-rose);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        /* Carousel */
+        .carousel-custom {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border: 4px solid #FFF;
+            margin-bottom: 25px;
+            width: 100%;
+        }
+        .carousel-item img {
+            height: 350px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        /* Temporizador */
+        .time-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            padding: 10px 5px;
+            border: 1px solid rgba(181, 107, 120, 0.2);
+        }
+        .time-number {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--dark-rose);
+        }
+
+        /* Botones */
+        .btn-custom {
+            background-color: var(--dark-rose);
+            color: white;
+            border-radius: 25px;
+            padding: 10px 24px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+        }
+        .btn-custom:hover { background-color: #3b131b; color: white; }
+        
+        /* Audio Floating Button */
+        .audio-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+            background: var(--dark-rose);
+            color: white;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            cursor: pointer;
+            border: 2px solid white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="mobile-container">
+        
+        <!-- MÚSICA -->
+        <div class="audio-float" onclick="toggleMusic()" id="musicBtn">
+            <i class="bi bi-music-note-beamed" id="musicIcon"></i>
+        </div>
+        <audio id="bgMusic" loop>
+            <source src="musica.mp3" type="audio/mpeg">
+        </audio>
+
+        <!-- ================= PÁGINA 1: PORTADA ================= -->
+        <section id="pagina-1" class="page-section">
+            <div class="subtitle-top">Mis XV Años</div>
+            <h1 class="main-name">Brithney</h1>
+            <div class="event-date">11 de septiembre
+            </div>
+            
+            <div class="scroll-down">
+                <div class="scroll-icon">
+                    <i class="bi bi-chevron-double-down"></i>
+                </div>
+                DESLIZA
+            </div>
+        </section>
+
+        <!-- ================= PÁGINA 2: CARRUSEL Y TIEMPO ================= -->
+        <section id="pagina-2" class="page-section">
+            <div class="content-overlay">
+                <p class="phrase">
+                    "Hay momentos en la vida que son especiales por sí solos, pero compartirlos con las personas que más amas los hace inolvidables."
+                </p>
+
+                <!-- CARRUSEL -->
+                <div id="heroCarousel" class="carousel slide carousel-fade carousel-custom" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="3500">
+                            <img src="carr 2.png" class="d-block w-100" alt="Foto 1">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="3500">
+                            <img src="foto.png" class="d-block w-100" alt="Foto 2">
+                        </div>
+                    </div>
+                </div>
+<br>
+                <p class="phrase">
+                     «No temas, porque yo estoy contigo; no desmayes, porque yo soy tu Dios que te esfuerzo; siempre te ayudaré, siempre te sustentaré con la diestra de mi justicia.» <br>
+                     Isaías 41:10 
+                </p>
+                <!-- CUENTA REGRESIVA -->
+                <div class="card-title fs-4 mt-3"><i class="bi bi-clock-history"></i> Falta Muy Poco</div>
+                <div class="row g-2 mt-2" id="timer">
+                    <div class="col-3"><div class="time-box"><div class="time-number" id="days">00</div><div class="time-label" style="font-size:0.6rem">Días</div></div></div>
+                    <div class="col-3"><div class="time-box"><div class="time-number" id="hours">00</div><div class="time-label" style="font-size:0.6rem">Hrs</div></div></div>
+                    <div class="col-3"><div class="time-box"><div class="time-number" id="minutes">00</div><div class="time-label" style="font-size:0.6rem">Min</div></div></div>
+                    <div class="col-3"><div class="time-box"><div class="time-number" id="seconds">00</div><div class="time-label" style="font-size:0.6rem">Seg</div></div></div>
+                </div>
+            </div>
+            
+        </section>
+
+        <!-- ================= PÁGINA 3: UBICACIÓN ================= -->
+        <section id="pagina-3" class="page-section">
+            <!-- CEREMONIA -->
+            <div class="info-card">
+                <div class="card-icon"><i class="bi bi-bank"></i></div>
+                <h2 class="card-title">Recepción</h2>
+                <div class="mb-1"><i class="bi bi-calendar3"></i> 11 de Septiembre</div>
+                <div class="mb-2"><i class="bi bi-clock"></i> 17:00 Hrs</div>
+                <div class="fw-bold">Salón de Eventos El Dorado</div>
+                <a href="https://maps.app.goo.gl/eWELzc7mY59XBSXZ7" class="btn-custom mt-3"><i class="bi bi-geo-alt-fill"></i> Ver Ubicación</a>
+                
+            </div>
+<br>
+<br><br>
+            <!-- RECEPCIÓN -->
+            <div class="info-card">
+                <div class="card-icon"><i class="bi bi-people-fill"></i></div>
+                <h2 class="card-title">Estoy muy agradecida con mis:</h2>
+                <br>
+            <div class="fw-bold">Padrinos de 15 años</div>
+                <div class="mb-1"><i class="bi "></i>Pablo Rueda Mamani</div>
+                <div class="mb-2"><i class="bi "></i>Sabina Aro Ancari</div>
+                <br>
+                <div class="fw-bold">Padrinos Sorpresa</div>
+                <div class="mb-1"><i class="bi "></i>Pablo Rueda Mamani</div>
+                <div class="mb-2"><i class="bi "></i>Sabina Aro Ancari</div>
+ 
+            </div>
+        </section>
+        <!-- ================= PÁGINA 4: DETALLES Y RSVP ================= -->
+        <section id="pagina-4" class="page-section">
+            
+            <!-- DRESS CODE -->
+            <div class="info-card">
+                <div class="card-icon"><i class="bi bi-gender-female"></i></div>
+                <h2 class="card-title">Codigo de Vestimenta Mujeres</h2>
+                <div class="fw-bold">Formal / Coctel</div>
+                <p class="small text-muted mt-2 mb-0">Vestido formal o de cóctel elegante.</p>
+            </div>
+<br><br>
+              <!-- DRESS CODE -->
+            <div class="info-card">
+                <div class="card-icon"><i class="bi bi-gender-male"></i></div>
+                <h2 class="card-title">Codigo de Vestimenta Varones</h2>
+                <div class="fw-bold">Formal / Coctel</div>
+                <p class="small text-muted mt-2 mb-0">Traje oscuro o esmoquin opcional</p>
+            </div>
+<br><br>
+            <!-- RSVP -->
+            <div class="info-card" style="background: rgba(232, 245, 233, 0.9);">
+                <div class="card-icon" style="background: #FFF; color: #2E7D32;"><i class="bi bi-whatsapp"></i></div>
+                <h2 class="card-title">Confirmar Asistencia</h2>
+                <a href="https://api.whatsapp.com/send?phone=79782638&text=Hola!%20Confirmo%20mi%20asistencia%20a%20los%20XV%20A%C3%B1os%20de%20Brithney." class="btn-custom" style="background-color: #25D366;">
+                    <i class="bi bi-whatsapp"></i> Confirmar
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/bootstrap.bundle.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 17 de Septiembre de 2026 a las 17:00 hrs (El mes 8 representa a Septiembre)
+        const eventDate = new Date(2026, 8, 11, 17, 0, 0).getTime();
+
+        const countdown = setInterval(function() {
+            const distance = eventDate - new Date().getTime();
+            if (distance < 0) return clearInterval(countdown);
+            document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+            document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+            document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+            document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
+        }, 1000);
+
+        const audio = document.getElementById('bgMusic');
+        const musicIcon = document.getElementById('musicIcon');
+        let isPlaying = false;
+        function toggleMusic() {
+            isPlaying ? audio.pause() : audio.play();
+            musicIcon.className = isPlaying ? 'bi bi-music-note-beamed' : 'bi bi-pause-fill';
+            isPlaying = !isPlaying;
+        }
+    </script>
+</body>
+</html>
